@@ -6,6 +6,7 @@ import fileUpload from "express-fileupload";
 import userRouter from "./routes/userRouter.js"
 import jobRouter from "./routes/jobRouter.js"
 import applicationRouter from "./routes/applicationRouter.js"
+import {dbConnection} from './database/dbConnetion.js'
 const app = express();
 
 dotenv.config({ path : "./config/config.env"});
@@ -27,5 +28,10 @@ app.use(fileUpload({
 app.use('/api/v1/user', userRouter)
 app.use('/api/v2/job', jobRouter)
 app.use('/api/v2/application', applicationRouter)
+
+dbConnection()
+
+
+
 
 export default app
