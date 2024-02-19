@@ -56,3 +56,5 @@ userSchema.methods.compare = async function(enterPassword){
 userSchema.methods.getJWT = function(){
     jwt.sign({id : this._id}, process.env.JWT_S)
 }
+
+export const User = mongoose.model('user', userSchema)
