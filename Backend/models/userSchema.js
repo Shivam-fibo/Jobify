@@ -1,60 +1,59 @@
-    import mongoose from "mongoose";
-    import validator from "validator";
-    import bcrypt from 'bcrypt'
-    import jwt from "jsonwebtoken";
+import mongoose from "mongoose";
+import validator from "validator";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, "Please enter your Name!"],
+    minLength: [3, "Name must contain at least 3 Characters!"],
+    maxLength: [30, "Name cannot exceed 30 Characters!"],
+  },
+  email: {
+    type: String,
+    required: [true, "Please enter your Email!"],
+    validate: [validator.isEmail, "Please provide a valid Email!"],
+  },
+  phone: {
+    type: Number,
+    required: [true, "Please enter your Phone Number!"],
+  },
+  password: {
+    type: String,
+    required: [true, "Please provide a Password!"],
+    minLength: [8, "Password must contain at least 8 characters!"],
+    maxLength: [32, "Password cannot exceed 32 characters!"],
+    select: false,
+  },
+  role: {
+    type: String,
+    required: [true, "Please select a role"],
+    enum: ["Job Seeker", "Employer"],
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
-    const userSchema = new mongoose.Schema({
-        name: {
-            type: String,
-            required: [true, "Please provide your name"],
-            minLength: [3, 'Name must containe at least 3 characters'],
-            maxLength: [20, 'Name can not exceed 20 characters']
-        },
-        email: {
-            type: String,
-            required: [true, 'Pleae enter your email'],
-            validate: [validator.isEmail, 'Please provide a valid email']
-        },
-        phone: {
-            type: Number,
-            required: [true, 'Please provide your phone number']
-        },
-        password: {
-            type: String,
-            required: [true, 'Please enter password'],
-            minLength: [8, 'Name must containe at least 8 characters'],
-            maxLength: [30, 'Name can not exceed 30 characters']
-        },
-        role:{
-            type: String,
-            required: [true, 'Please provide your role type'],
-            enum : ["Job Seeker", "Employer"]
-        },
-        createdAt:{
-            type: Date,
-            default: Date.now
-        },
-    });
 
+//ENCRYPTING THE PASSWORD WHEN THE USER REGISTERS OR MODIFIES HIS PASSWORD
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    next();
+  }
+  this.password = await bcrypt.hash(this.password, 10);
+});
 
+//COMPARING THE USER PASSWORD ENTERED BY USER WITH THE USER SAVED PASSWORD
+userSchema.methods.comparePassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
 
-    // Hashing password
-    userSchema.pre("save", async function(next){
-        if(!this.isModified('password')){
-            next();
-        }
-        this.password = await bcrypt.hash(this.password, 10)
-    });
+userSchema.methods.getJWTToken = function () {
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
+    expiresIn: process.env.JWT_EXPIRE,
+  });
+};
 
-    // comparing the password
-    userSchema.methods.compare = async function(enterPassword){
-        return await bcrypt.compare(enterPassword, this.password)
-    };
-
-    // generating a jwt token for authorization
-
-    userSchema.methods.getJWT = function(){
-      return  jwt.sign({id : this._id}, process.env.JWT_S)
-    }
-
-    export const User = mongoose.model('user', userSchema)
+export const User = mongoose.model("User", userSchema);

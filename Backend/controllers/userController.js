@@ -2,7 +2,7 @@ import { catchAsyncErrors } from "../middlewares/catchAsyncError.js";
 import { User } from "../models/userSchema.js";
 import ErrorHandler from "../middlewares/error.js";
 
-
+import { sendToken } from "../utils/jwtTokens.js";
 
 
 export const register = catchAsyncErrors(async (req, res, next) => {
@@ -23,3 +23,5 @@ export const register = catchAsyncErrors(async (req, res, next) => {
     });
     sendToken(user, 201, res, "User Registered!");
   });
+
+  
