@@ -37,7 +37,7 @@ export const login = catchAsyncErrors(async(req, res, next) =>{
       new ErrorHandler("Invalid email or password" , 400)
       )
     }
-    const isPassword = await user.ccomparePassword(password);
+    const isPassword = await user.comparePassword(password);
     if(!isPassword){
       return next(
       new ErrorHandler("Invalid email or password", 400)
@@ -53,7 +53,7 @@ export const login = catchAsyncErrors(async(req, res, next) =>{
 });
 
 export const logout = catchAsyncErrors((req, res,next)=>{
-res.status(201).cookie("token", ""{
+res.status(201).cookie("token", "" ,{
   httpOnly : true,
   expires: new Date(Date.now()),
 }).json({
