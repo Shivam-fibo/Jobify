@@ -61,4 +61,12 @@ res.status(201).cookie("token", "" ,{
   message: "User is succesfully log out"
 })
 })
+
+export const getUser = catchAsyncErrors((req, res, next) =>{
+  const user = req.user;
+  res.status(200).json({
+    success: true,
+    user
+  })
+})
   
