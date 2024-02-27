@@ -63,13 +63,7 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
     return next(new ErrorHandler("Please fill all fields.", 400));
   }
   const application = await Application.create({
-    name,
-    email,
-    coverLetter,
-    phone,
-    address,
-    applicantID,
-    employerID,
+    name, email,  coverLetter,phone,address,applicantID,employerID,
     resume: {
       public_id: cloudinaryResponse.public_id,
       url: cloudinaryResponse.secure_url,
