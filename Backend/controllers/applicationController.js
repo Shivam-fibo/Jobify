@@ -110,7 +110,7 @@ export const jobseekerGetAllApplications = catchAsyncErrors(
   }
 );
 
-export const jobseekerDeleteApplication = catchAsyncErrors(
+export const jobseekerDeleteApplications = catchAsyncErrors(
   async (req, res, next) => {
     const { role } = req.user;
     if (role === "Employer") {
