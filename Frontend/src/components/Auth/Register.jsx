@@ -53,21 +53,11 @@ const Register = () => {
       <section className="authPage">
         <div className="container">
           <div className="header">
-            <img src="" alt="logo" />
+     
             <h3>Create a new account</h3>
           </div>
           <form>
-            <div className="inputTag">
-              <label>Register As</label>
-              <div>
-                <select value={role} onChange={(e) => setRole(e.target.value)}>
-                  <option value="">Select Role</option>
-                  <option value="Employer">Employer</option>
-                  <option value="Job Seeker">Job Seeker</option>
-                </select>
-                <FaRegUser />
-              </div>
-            </div>
+            
             <div className="inputTag">
               <label>Name</label>
               <div>
@@ -114,6 +104,18 @@ const Register = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <RiLock2Fill />
+              </div>
+            </div>
+
+            <div className="inputTag">
+              <label>Register As</label>
+              <div>
+                <select value={role} onChange={(e) => setRole(e.target.value)}>
+                  <option value="">Select Role</option>
+                  <option value="Employer">Employer</option>
+                  <option value="Job Seeker">Job Seeker</option>
+                </select>
+                <FaRegUser />
               </div>
             </div>
             <button type="submit" onClick={handleRegister}>

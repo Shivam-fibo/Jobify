@@ -78,13 +78,14 @@ p {
   max-width: 1500px;
   margin: 0 auto;
   min-height: 100vh;
+ 
 }
 .authPage .container {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background: #fff;
+  justify-content: column;
+  background: rgb(211, 200, 160);
   padding: 20px 20px;
 }
 .authPage .container .header {
@@ -121,7 +122,7 @@ p {
 }
 .authPage .container form .inputTag div input,
 .authPage .container form .inputTag div select {
-  background: #87878778;
+  
   padding: 8px;
   border: none;
   width: 100%;
@@ -134,7 +135,7 @@ p {
 .authPage .container form .inputTag div svg {
   width: 10%;
   font-size: 1.5rem;
-  background: #2d5649;
+  background: #035b3f;
   height: 100%;
   padding: 8px;
   color: #fff;
@@ -149,7 +150,9 @@ p {
   background: #2d5649;
   font-size: 1.2rem;
   border-radius: 7px;
+  
 }
+
 .authPage .container form a {
   padding: 12px;
   text-align: center;
