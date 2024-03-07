@@ -1152,7 +1152,7 @@ p {
   }
 }
 nav {
-  background: #18191c;
+  background: #eeeff2;
   padding: 0 20px;
 }
 nav .container {
@@ -1193,7 +1193,7 @@ nav .menu button:hover {
   border: 1px solid #184235;
 }
 nav .menu li a {
-  color: #f1f3f6;
+  color: #176ae7;
   text-decoration: none;
   font-weight: 300;
   font-size: 20px;
