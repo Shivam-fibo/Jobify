@@ -78,14 +78,13 @@ p {
   max-width: 1500px;
   margin: 0 auto;
   min-height: 100vh;
- 
 }
 .authPage .container {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: column;
-  background: rgb(211, 200, 160);
+  justify-content: center;
+  background: #fff;
   padding: 20px 20px;
 }
 .authPage .container .header {
@@ -122,7 +121,7 @@ p {
 }
 .authPage .container form .inputTag div input,
 .authPage .container form .inputTag div select {
-  
+  background: #87878778;
   padding: 8px;
   border: none;
   width: 100%;
@@ -135,7 +134,7 @@ p {
 .authPage .container form .inputTag div svg {
   width: 10%;
   font-size: 1.5rem;
-  background: #035b3f;
+  background: #2d5649;
   height: 100%;
   padding: 8px;
   color: #fff;
@@ -150,9 +149,7 @@ p {
   background: #2d5649;
   font-size: 1.2rem;
   border-radius: 7px;
-  
 }
-
 .authPage .container form a {
   padding: 12px;
   text-align: center;
@@ -1152,7 +1149,7 @@ p {
   }
 }
 nav {
-  background: #eeeff2;
+  background: #18191c;
   padding: 0 20px;
 }
 nav .container {
@@ -1193,7 +1190,7 @@ nav .menu button:hover {
   border: 1px solid #184235;
 }
 nav .menu li a {
-  color: #176ae7;
+  color: #f1f3f6;
   text-decoration: none;
   font-weight: 300;
   font-size: 20px;
