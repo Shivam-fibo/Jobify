@@ -12,13 +12,13 @@ const Footer = () => {
    <footer className={isAuthorized ? "footerShow": "footerHide"}>
     <div> &copy; All right reseved by Shivam</div>
       <div>
-        <Link to={'/'} target= "_blank"><FaLinkedin/></Link>
+        <Link to={'https://www.linkedin.com/in/shivamgupta6418/'} target= "_blank"><FaLinkedin/></Link>
 
-        <Link to={'/'} target= "_blank"><FaTwitter/></Link>
+        <Link to={'https://twitter.com/sg6418'} target= "_blank"><FaTwitter/></Link>
 
-        <Link to={'/'} target= "_blank"><FaGithub/></Link>
+        <Link to={'https://github.com/Shivam-fibo'} target= "_blank"><FaGithub/></Link>
 
-        <Link to={'/'} target= "_blank"><FaInstagram/></Link>
+        <Link to={'https://shivam_gupta_6418'} target= "_blank"><FaInstagram/></Link>
       </div>
    </footer>
   )
