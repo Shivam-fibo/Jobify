@@ -53,17 +53,27 @@ const Register = () => {
       <section className="authPage">
         <div className="container">
           <div className="header">
-     
+            <img src="/JobZeelogo.png" alt="logo" />
             <h3>Create a new account</h3>
           </div>
           <form>
-            
+            <div className="inputTag">
+              <label>Register As</label>
+              <div>
+                <select value={role} onChange={(e) => setRole(e.target.value)}>
+                  <option value="">Select Role</option>
+                  <option value="Employer">Employer</option>
+                  <option value="Job Seeker">Job Seeker</option>
+                </select>
+                <FaRegUser />
+              </div>
+            </div>
             <div className="inputTag">
               <label>Name</label>
               <div>
                 <input
                   type="text"
-                  placeholder="Your Name"
+                  placeholder="Enter your name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -75,7 +85,7 @@ const Register = () => {
               <div>
                 <input
                   type="email"
-                  placeholder="youremail@gmail.com"
+                  placeholder="example@gmail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -106,18 +116,6 @@ const Register = () => {
                 <RiLock2Fill />
               </div>
             </div>
-
-            <div className="inputTag">
-              <label>Register As</label>
-              <div>
-                <select value={role} onChange={(e) => setRole(e.target.value)}>
-                  <option value="">Select Role</option>
-                  <option value="Employer">Employer</option>
-                  <option value="Job Seeker">Job Seeker</option>
-                </select>
-                <FaRegUser />
-              </div>
-            </div>
             <button type="submit" onClick={handleRegister}>
               Register
             </button>
@@ -125,7 +123,7 @@ const Register = () => {
           </form>
         </div>
         <div className="banner">
-          <img src="" alt="login" />
+          <img src="/register.png" alt="login" />
         </div>
       </section>
     </>
