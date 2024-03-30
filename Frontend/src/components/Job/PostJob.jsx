@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "../../main";
+import { Context } from "../../main";
 
 const PostJob = () => {
   const [title, setTitle] = useState("");
@@ -16,7 +16,7 @@ const PostJob = () => {
   const [fixedSalary, setFixedSalary] = useState("");
   const [salaryType, setSalaryType] = useState("");
 
-  const { isAuthorized, user } = useContext(Context);
+  const { isAuthorized, user } = Context(Context);
 
   const handleJobPost = async (e) => {
     e.preventDefault();
