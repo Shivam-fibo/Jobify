@@ -16,10 +16,10 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
   }
 
   const { resume } = req.files;
-  const allowedFormats = ["image/png", "image/jpeg", "image/webp"];
+  const allowedFormats = ["image/png", "image/jpeg", "image/webp", "image/pdf"];
   if (!allowedFormats.includes(resume.mimetype)) {
     return next(
-      new ErrorHandler("Invalid file type. Please upload a PNG file.", 400)
+      new ErrorHandler("Invalid file type. Please upload a JPG, PNG or WebP file.", 400)
     );
   }
   const cloudinaryResponse = await cloudinary.uploader.upload(
