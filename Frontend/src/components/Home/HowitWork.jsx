@@ -13,17 +13,17 @@ const HowitWork = () => {
               <div className="card">
                 <FaUserPlus/>
                 <p>Create Account</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, impedit.</p>
+                  <p>Create an account using email id and phone number</p>
               </div>
               <div className="card">
                 <MdFindInPage/>
-                <p>Find a Job/ Post a Job</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, impedit.</p>
+                <p>Find a Job</p>
+                  <p>Find the job which match with your skill</p>
               </div>
               <div className="card">
               <LuSendHorizonal />
-                <p>Create Account</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, impedit.</p>
+                <p>Submit Application </p>
+                  <p>Submit your job application with your basic info and resume</p>
               </div>
             </div>
       </div>

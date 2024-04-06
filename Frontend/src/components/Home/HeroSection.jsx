@@ -1,29 +1,31 @@
 import React from "react";
+import CountUp from 'react-countup';
+import { TypeAnimation } from 'react-type-animation';
 import { FaBuilding, FaSuitcase, FaUsers, FaUserPlus } from "react-icons/fa";
 
 const HeroSection = () => {
   const details = [
     {
       id: 1,
-      title: "1,23,441",
+      title: <CountUp end = {10} duration = {2}/>,
       subTitle: "Live Job",
       icon: <FaSuitcase />,
     },
     {
       id: 2,
-      title: "91220",
+      title: <CountUp end = {100} duration = {2}/>,
       subTitle: "Companies",
       icon: <FaBuilding />,
     },
     {
       id: 3,
-      title: "2,34,200",
+      title: <CountUp end = {250} duration = {2}/>,
       subTitle: "Job Seekers",
       icon: <FaUsers />,
     },
     {
       id: 4,
-      title: "1,03,761",
+      title: <CountUp end = {300} duration = {2}/>,
       subTitle: "Employers",
       icon: <FaUserPlus />,
     },
@@ -33,12 +35,30 @@ const HeroSection = () => {
       <div className="heroSection">
         <div className="container">
           <div className="title">
-            <h1>Find a job that suits</h1>
-            <h1>your interests and skills</h1>
+          <TypeAnimation
+  sequence={[
+    // Same substring at the start will only be typed once, initially
+    'Find a job that suits your interests',
+    1000,
+    'Find a job that suits your skill',
+    1000,
+    'Find a job that suits your location',
+    1000,
+    'Find a job that suits your passion',
+    1000,
+    'Find a job that suits your expertise',
+    1000,
+   'Find a job that suits your qualifications',
+    1000,
+    
+  ]}
+  speed={50}
+  style={{ fontSize: '2em' }}
+  repeat={Infinity}
+/>
+         
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-              voluptate repellat modi quidem aliquid eaque ducimus ipsa et,
-              facere mollitia!
+            Discover a realm of career prospects through our all-encompassing job portal, where your next significant opportunity lies. Engage with leading companies and advance your professional journey today.
             </p>
           </div>
           <div className="image">
