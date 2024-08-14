@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
   margin: 0;
@@ -6,6 +6,7 @@
   box-sizing: border-box;
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
+  
 }
 ::-webkit-scrollbar {
   display: none;
@@ -206,12 +207,12 @@ p {
   display: flex;
   gap: 12px;
   font-size: 16px;
-  color: #f1f3f6;
+  color: #5d6347;
 }
 .footerShow div a {
   font-size: 20px;
   text-decoration: none;
-  color: #f1f3f6;
+  color: #5d6347;
 }
 .footerShow div a:hover {
   color: #2d5649;
@@ -285,7 +286,7 @@ p {
   display: flex;
   gap: 20px;
   align-items: center;
-  background: #f1f3f6;
+  background: #5d6347;
   width: 220px;
   padding: 10px 20px;
 }
@@ -367,7 +368,7 @@ p {
   }
 }
 .howitworks {
-  background: #f1f3f6;
+  background: #5d6347;
 }
 .howitworks .container {
   max-width: 1500px;
@@ -454,7 +455,7 @@ p {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #f1f3f6;
+  background: #5d6347;
 }
 .categories .banner .card:hover {
   transition: all 0.3s;
@@ -501,7 +502,7 @@ p {
 }
 
 .companies {
-  background: #f1f3f6;
+  background: #5d6347;
   padding: 50px 0;
 }
 .companies .container {
@@ -586,7 +587,7 @@ p {
   }
 }
 .jobs {
-  background: #f1f3f6;
+  background: #5d6347;
   min-height: 100vh;
   padding: 50px 20px;
 }
@@ -663,7 +664,7 @@ p {
 }
 
 .jobDetail {
-  background: #f1f3f6;
+  background: #5d6347;
   padding: 50px 20px;
 }
 .jobDetail .container {
@@ -769,7 +770,7 @@ p {
   }
 }
 .my_applications {
-  background: #f1f3f6;
+  background: #5d6347;
   padding: 50px 20px;
   min-height: 885px;
 }
@@ -870,7 +871,7 @@ p {
 }
 
 .job_post {
-  background: #f1f3f6;
+  background: #5d6347;
   padding: 50px 20px;
   min-height: 870px;
   display: flex;
@@ -973,7 +974,7 @@ p {
   }
 }
 .myJobs {
-  background: #f1f3f6;
+  background: #5d6347;
   padding: 50px 20px;
   min-height: 870px;
 }
@@ -1088,7 +1089,7 @@ p {
 }
 .myJobs .container .banner .card .button_wrapper .delete_btn {
   background: #d9534f;
-  color: #f1f3f6;
+  color: #5d6347;
 }
 .myJobs .container .banner .card .button_wrapper .check_btn {
   background: transparent;
@@ -1105,7 +1106,7 @@ p {
 .myJobs .container .banner .card .button_wrapper .check_btn:hover {
   transition: all 0.3s;
   background: #184235;
-  color: #f1f3f6;
+  color: #5d6347;
 }
 .myJobs .container .banner .card .button_wrapper .cross_btn {
   background: transparent;
@@ -1122,7 +1123,7 @@ p {
 .myJobs .container .banner .card .button_wrapper .cross_btn:hover {
   transition: all 0.3s;
   background: #d9534f;
-  color: #f1f3f6;
+  color: #5d6347;
 }
 .myJobs .container .banner .card .button_wrapper .edit_btn_wrapper {
   gap: 20px;
@@ -1176,14 +1177,14 @@ nav .menu {
 nav .menu button {
   height: fit-content;
   padding: 7px;
-  border: 1px solid #f1f3f6;
-  color: #f1f3f6;
+  border: 1px solid #5d6347;
+  color: #5d6347;
   background: transparent;
   font-size: 20px;
   font-weight: 300;
 }
 nav .menu button:hover {
-  color: #f1f3f6;
+  color: #5d6347;
   background: #184235;
   transition: all 0.3s;
   cursor: pointer;
@@ -1191,7 +1192,7 @@ nav .menu button:hover {
   border: 1px solid #184235;
 }
 nav .menu li a {
-  color: #f1f3f6;
+  color: #5d6347;
   text-decoration: none;
   font-weight: 300;
   font-size: 20px;
@@ -1237,7 +1238,7 @@ nav .hamburger {
   nav .hamburger {
     display: block;
     font-size: 35px;
-    color: #f1f3f6;
+    color: #5d6347;
   }
   nav .container {
     align-items: center;
@@ -1245,7 +1246,7 @@ nav .hamburger {
   .menu {
     position: fixed;
     top: 120px;
-    background: #f1f3f6;
+    background: #5d6347;
     left: -100%;
     transition: all 0.3s;
     width: 400px;
@@ -1259,7 +1260,7 @@ nav .hamburger {
   nav .show-menu {
     position: fixed;
     top: 120px;
-    background: #f1f3f6;
+    background: #5d6347;
     transition: all 0.3s;
     left: 0;
     width: 400px;
@@ -1284,7 +1285,7 @@ nav .hamburger {
   }
   nav .show-menu button:hover {
     background: #18191c;
-    color: #f1f3f6;
+    color: #5d6347;
   }
 }
 @media (max-width: 490px) {
@@ -1312,7 +1313,7 @@ nav .hamburger {
 .notfound .content a:hover {
   background: #184235;
   transition: all 0.3s;
-  color: #f1f3f6;
+  color: #5d6347;
 }
 .resume-modal {
   width: 100%;
@@ -1349,4 +1350,4 @@ nav .hamburger {
   .resume-modal {
     z-index: 11;
   }
-}
+} */

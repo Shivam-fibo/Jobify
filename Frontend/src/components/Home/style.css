@@ -1,0 +1,157 @@
+/* Base Styles *//* Container */
+#product-customization {
+    max-width: 1280px; /* max-w-screen-xl */
+    margin: 0 auto; /* mx-auto */
+    padding: 16px 16px 64px 16px; /* px-4 pb-8 pt-16 */
+  }
+  
+  @media (min-width: 640px) {
+    #product-customization {
+      padding-left: 24px; /* sm:px-6 */
+      padding-right: 24px; /* sm:px-6 */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    #product-customization {
+      padding-left: 32px; /* lg:px-8 */
+      padding-right: 32px; /* lg:px-8 */
+      padding-top: 96px; /* lg:pt-24 */
+    }
+  }
+  
+  /* Text Centering */
+  #text-center {
+    text-align: center; /* text-center */
+  }
+  
+  /* Section Title */
+  #section-title {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 800; /* font-extrabold */
+    color: #1f2937; /* text-gray-900 */
+  
+    @media (min-width: 640px) {
+      font-size: 3rem; /* sm:text-5xl */
+    }
+  }
+  
+  /* Description */
+  #description {
+    margin: 16px auto 0; /* mx-auto mt-4 */
+    max-width: 24rem; /* max-w-sm */
+    color: #6b7280; /* text-gray-500 */
+  }
+  
+  /* Get Started Button */
+  #get-started-button {
+    display: inline-block; /* inline-block */
+    margin-top: 32px; /* mt-8 */
+    border-radius: 9999px; /* rounded-full */
+    border: 1px solid #4f46e5; /* border-indigo-600 */
+    padding: 12px 48px; /* px-12 py-3 */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    color: #4f46e5; /* text-indigo-600 */
+    text-align: center; /* Centering the text */
+    text-decoration: none; /* Removing underline */
+  
+    /* Hover and Focus States */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  }
+  
+  #get-started-button:hover {
+    background-color: #4f46e5; /* hover:bg-indigo-600 */
+    color: #ffffff; /* hover:text-white */
+  }
+  
+  #get-started-button:focus,
+  #get-started-button:active {
+    outline: none; /* focus:outline-none */
+    background-color: #4338ca; /* active:bg-indigo-500 */
+    color: #ffffff; /* Ensuring the text stays white on active */
+  }
+  
+
+
+
+
+
+
+
+
+  /* Base Styles */
+.how_howitworks {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .how_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  h3 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  .how_banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .how_card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .how_card p:first-of-type {
+    font-size: 1.5em;
+    color: #007bff;
+    margin: 20px 0;
+  }
+  
+  .how_card p:last-of-type {
+    font-size: 1em;
+    color: #666;
+  }
+  
+  .how_card svg {
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .how_banner {
+      flex-direction: column;
+    }
+  
+    .how_card {
+      margin-bottom: 30px;
+      width: 80%;
+    }
+  
+    h3 {
+      font-size: 1.8em;
+    }
+  
+    .how_card p:first-of-type {
+      font-size: 1.3em;
+    }
+  
+    .how_card p:last-of-type {
+      font-size: 0.9em;
+    }
+  }
+  

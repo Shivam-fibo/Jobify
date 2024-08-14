@@ -3,6 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../main";
+import './style.css'
 const PostJob = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -74,11 +75,11 @@ const PostJob = () => {
 
   return (
     <>
-      <div className="job_post page">
-        <div className="container">
+      <div className="job_post job_post_page">
+        <div className="post_container">
           <h3>POST NEW JOB</h3>
           <form onSubmit={handleJobPost}>
-            <div className="wrapper">
+            <div className="post_wrapper">
               <input
                 type="text"
                 value={title}
@@ -114,7 +115,7 @@ const PostJob = () => {
                 <option value="Data Entry Operator">Data Entry Operator</option>
               </select>
             </div>
-            <div className="wrapper">
+            <div className="post_wrapper">
               <input
                 type="text"
                 value={country}
@@ -177,7 +178,7 @@ const PostJob = () => {
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Job Description"
             />
-            <button type="submit">Create Job</button>
+            <button className="btn" type="submit">Create Job</button>
           </form>
         </div>
       </div>

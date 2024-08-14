@@ -17,6 +17,7 @@ export const postJob = catchAsyncErrors(async (req, res, next) => {
       new ErrorHandler("Job Seeker not allowed to access this resource.", 400)
     );
   }
+  
   const {
     title,
     description,

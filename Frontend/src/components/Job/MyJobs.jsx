@@ -5,6 +5,7 @@ import { FaCheck } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 import { Context } from "../../main";
 import { useNavigate } from "react-router-dom";
+import './style.css'
 
 const MyJobs = () => {
   const [myJobs, setMyJobs] = useState([]);
@@ -88,15 +89,15 @@ const MyJobs = () => {
 
   return (
     <>
-      <div className="myJobs page">
-        <div className="container">
+      <div className="myJobs myJobs_page">
+        <div className="myJobs_container">
           <h1>Your Posted Jobs</h1>
           { myJobs.length > 0 ? (
             <>
-              <div className="banner">
+              <div className="myJobs_banner">
                 {myJobs.map((element) => (
-                  <div className="card" key={element._id}>
-                    <div className="content">
+                  <div className="myJobs_card" key={element._id}>
+                    <div className="myJobs_content">
                       <div className="short_fields">
                         <div>
                           <span>Title:</span>

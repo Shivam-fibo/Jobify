@@ -6,6 +6,7 @@ import { FaRegUser } from "react-icons/fa";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
+import './style.css'
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -46,7 +47,7 @@ const Login = () => {
       <section className="authPage">
         <div className="container">
           <div className="header">
-            <img src="/JobZeelogo.png" alt="logo" />
+         
             <h3>Login to your account</h3>
           </div>
           <form>
@@ -91,9 +92,7 @@ const Login = () => {
             <Link to={"/register"}>Register Now</Link>
           </form>
         </div>
-        <div className="banner">
-          <img src="/login.png" alt="login" />
-        </div>
+      
       </section>
     </>
   );

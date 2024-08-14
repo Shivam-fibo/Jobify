@@ -1,5 +1,6 @@
 import React from 'react'
 import {} from 'react-icons/fa'
+import './style.css'
 
 const PopularCompanies = () => {
 

@@ -7,6 +7,7 @@ import { useState } from 'react'
 import { TbNavigationExclamation } from 'react-icons/tb'
 import { Link, useNavigate } from 'react-router-dom'
 import { Context } from '../../main'
+import './style.css'
 const Jobs = () => {
   const[jobs, setJobs] = useState([])
   const {isAuthorized} = useContext(Context)
@@ -26,14 +27,14 @@ const Jobs = () => {
     navigateTo("/login");
   }
   return (
-   <div className="jobs page">
-    <div className="container">
+   <div className="jobs_page">
+    <div className="job_container">
       <h1>All Avilable Jobs</h1>
-        <div className='banner'>
+        <div className='job_banner'>
             {
               jobs.jobs && jobs.jobs.map((element) =>{
                 return(
-                  <div className='card' key={element._id}> 
+                  <div className='job_card' key={element._id}> 
     <p>{element.title}</p>
     <p>{element.category}</p>
     <p>{element.country}</p>

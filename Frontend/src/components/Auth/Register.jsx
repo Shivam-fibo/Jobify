@@ -8,6 +8,7 @@ import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
+import './style.css'
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -53,7 +54,7 @@ const Register = () => {
       <section className="authPage">
         <div className="container">
           <div className="header">
-            <img src="/JobZeelogo.png" alt="logo" />
+         
             <h3>Create a new account</h3>
           </div>
           <form>
@@ -122,9 +123,7 @@ const Register = () => {
             <Link to={"/login"}>Login Now</Link>
           </form>
         </div>
-        <div className="banner">
-          <img src="/register.png" alt="login" />
-        </div>
+     
       </section>
     </>
   );
