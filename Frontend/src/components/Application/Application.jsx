@@ -63,7 +63,7 @@ const Application = () => {
   }
 
   return (
-    <section className="application bg-gray-100 p-6 rounded-lg shadow-md">
+    <section className="application bg-gray-100 p-6 mt-4 rounded-lg shadow-md">
     <div className="container">
       <h3 className="text-xl font-semibold mb-4">Application Form</h3>
       <form onSubmit={handleApplication} className="space-y-4">

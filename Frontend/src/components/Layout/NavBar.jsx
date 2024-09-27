@@ -30,10 +30,10 @@ const Navbar = () => {
   return (
     <nav className={`bg-white mb-4 border-gray-200 dark:bg-gray-900 fixed top-0 left-0 w-full z-50 ${isAuthorized ? "block" : "hidden"}`}>
     <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      {/* Logo Section */}
+  
       <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-        {/* Replace with your logo image */}
-        <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="MyApp Logo" />
+       
+        <img src="./job.png" className="h-6" alt="MyApp Logo" />
         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">MyApp</span>
       </Link>
       
@@ -55,14 +55,14 @@ const Navbar = () => {
       <div className={`hidden w-full md:block md:w-auto ${show ? "block" : "hidden"}`} id="navbar-default">
         <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <li>
-            <Link to="/" onClick={() => setShow(false)} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">Home</Link>
+            <Link to="/" onClick={() => setShow(false)} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">HOME</Link>
           </li>
           <li>
-            <Link to="/job/getall" onClick={() => setShow(false)} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">All Jobs</Link>
+            <Link to="/job/getall" onClick={() => setShow(false)} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">ALL JOBS</Link>
           </li>
           <li>
             <Link to="/applications/me" onClick={() => setShow(false)} className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-              {user && user.role === "Employer" ? "APPLICANT'S APPLICATIONS" : "MY APPLICATIONS"}
+              {user && user.role === "Employer" ? "APPLICANT'S APPLICATIONS" : "My Application"}
             </Link>
           </li>
           {user && user.role === "Employer" && (

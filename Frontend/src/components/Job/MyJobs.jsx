@@ -88,7 +88,7 @@ const MyJobs = () => {
   };
 
   return (
-    <><div className="container mx-auto p-4">
+    <><div className="container mx-auto mt-4 p-4">
     <div className="text-center mb-6">
       <h1 className="text-3xl font-bold">Your Posted Jobs</h1>
     </div>

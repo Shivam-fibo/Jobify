@@ -27,7 +27,7 @@ const Jobs = () => {
     navigateTo("/login");
   }
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mt-4 mx-auto p-4">
     <div className="text-center mb-6">
       <h1 className="text-3xl font-bold">All Available Jobs</h1>
     </div>

@@ -37,7 +37,7 @@ const HeroSection = () => {
           : "Streamline Your Hiring Process"}
       </h2>
   
-      <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+      <p className="mb-8 text-xl font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
         {user && user.role === "Job Seeker"
           ? "Search and apply for your dream job, manage applications, and track your progress all in one place."
           : "Post job listings, manage applications, and streamline the hiring process with our job portal designed for employers."}
@@ -64,20 +64,7 @@ const HeroSection = () => {
             ></path>
           </svg>
         </a>
-        <a
-          href="#"
-          className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-        >
-          <svg
-            className="mr-2 -ml-1 w-5 h-5"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
-          </svg>
-          Watch video
-        </a>
+      
       </div>
     </div>
   </div>

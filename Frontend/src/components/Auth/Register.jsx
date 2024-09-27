@@ -103,7 +103,7 @@ const Register = () => {
         <div className="relative">
           <input
             type="number"
-            placeholder="12345678"
+            placeholder="123-456-7890"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             className="block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
