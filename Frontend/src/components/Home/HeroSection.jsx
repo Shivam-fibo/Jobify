@@ -1,13 +1,13 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import "./style.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../../main";
-import toast from "react-hot-toast";  
+import toast from "react-hot-toast";
 
 const HeroSection = () => {
   const { isAuthorized, setIsAuthorized, user } = useContext(Context);
   const navigateTo = useNavigate();
-  
+
   const handleLogout = async () => {
     try {
       const response = await axios.get(
@@ -24,24 +24,31 @@ const HeroSection = () => {
     }
   };
   return (
-    <>
-      <div id="product-customization" className="container">
-        <div id="text-center" className="text-center">
-          <h2 id="section-title" className="section-title">
-            Find the Job that suit you
-          </h2>
+    <div id="product-customization" className="container">
+      <div id="text-center" className="text-center">
+        <h2 id="section-title" className="section-title">
+          {user && user.role === "Job Seeker"
+            ? "Find Your Dream Job"
+            : "Streamline Your Hiring Process"}
+        </h2>
 
-          <p id="description" className="description">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum
-            maiores ipsum eos temporibus ea nihil.
-          </p>
+        <p id="description" className="description">
+          {user && user.role === "Job Seeker"
+            ? "Search and apply for your dream job, manage applications, and track your progress all in one place."
+            : "Post job listings, manage applications, and streamline the hiring process with our job portal designed for employers."}
+        </p>
 
-          <a href="#" id="get-started-button" className="get-started-button" onClick={handleLogout}>
-            Get Started
-          </a>
-        </div>
+        <a
+          href={
+            user && user.role === "Job Seeker" ? "/applications/me" : "/job/pos"
+          }
+          id="get-started-button"
+          className="get-started-button"
+        >
+          Get Started
+        </a>
       </div>
-    </>
+    </div>
   );
 };
 
