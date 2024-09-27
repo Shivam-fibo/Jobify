@@ -26,46 +26,54 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="container h-screen mx-auto px-4 py-8">
-      
-      <div className="text-center">
-
-
-      <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-        {user && user.role === "Job Seeker"
-          ? "Find Your Dream Job"
-          : "Streamline Your Hiring Process"}
-      </h2>
-  
-      <p className="mb-8 text-xl font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-        {user && user.role === "Job Seeker"
-          ? "Search and apply for your dream job, manage applications, and track your progress all in one place."
-          : "Post job listings, manage applications, and streamline the hiring process with our job portal designed for employers."}
-      </p>
-  
-      <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-        <a
-          href={
-            user && user.role === "Job Seeker" ? "/applications/me" : "/job/post"
-          }
-          className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
-        >
-          Get Started
-          <svg
-            className="ml-2 -mr-1 w-5 h-5"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-        </a>
-      
+    <div className="container mx-auto h-screen px-4 py-8">
+    <div className="flex flex-wrap">
+      {/* Left section */}
+      <div className="w-full sm:w-8/12 mb-10">
+        <div className="container mx-auto h-full sm:p-10">
+          <nav className="flex px-4 justify-between items-center">
+            <div className="text-4xl font-bold">
+              Jobify<span className="text-green-700">.</span>
+            </div>
+            <div>
+           
+            </div>
+          </nav>
+          <header className="container px-4 lg:flex mt-10 items-center h-full lg:mt-0">
+            <div className="w-full">
+              <h1 className="text-4xl lg:text-6xl font-bold">
+                {user && user.role === "Job Seeker"
+                  ? "Find your "
+                  : "Streamline your "} 
+                <span className="text-green-700">
+                  {user && user.role === "Job Seeker"
+                    ? "Dream Job"
+                    : "Hiring Process"}
+                </span>
+              </h1>
+              <div className="w-20 h-2 bg-green-700 my-4"></div>
+              <p className="text-xl mb-10">
+                {user && user.role === "Job Seeker"
+                  ? "Search and apply for your dream job, manage applications, and track your progress all in one place."
+                  : "Post job listings, manage applications, and streamline the hiring process with our job portal designed for employers."}
+              </p>
+              <a
+                href={user && user.role === "Job Seeker" ? "/applications/me" : "/job/post"}
+                className="bg-green-500 text-white text-2xl font-medium px-4 py-2 rounded shadow hover:bg-green-600 transition duration-200"
+              >
+                Get Started
+              </a>
+            </div>
+          </header>
+        </div>
       </div>
+  
+      {/* Right section */}
+      <img
+        src="https://images.unsplash.com/photo-1536147116438-62679a5e01f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+        alt="Leafs"
+        className="w-full h-24 object-cover sm:h-screen sm:w-4/12"
+      />
     </div>
   </div>
   
