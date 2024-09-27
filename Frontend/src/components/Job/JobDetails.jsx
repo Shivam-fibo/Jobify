@@ -30,38 +30,50 @@ const JobDetails = () => {
   }
   return (
     <>
-       <div className="jobDetail page">
-          <div className="container">
-              <h3>JOb Details</h3>
-                <p>
-                  Title: <span>{job.title}</span>
-                </p>
-                <p>
-                  Category: <span>{job.category}</span>
-                </p>
-                <p>
-                  City: <span>{job.city}</span>
-                </p>
-                <p>
-                  Location: <span>{job.location}</span>
-                </p>
-                <p>
-                  Description: <span>{job.description}</span>
-                </p>
-                <p>
-                  Job Posted On: <span>{job.jobPostedOn}</span>
-                </p>
-                <p>
-                  Salary : {job.fixedSalary ? (<span>{job.fixedSalaryn}</span>) : (<span>{job.salaryFrom} - {job.salaryTo}</span>)}
-                </p>
-                <p>
-                  {
-                    user && user.Role === "Employer" ? <> </> : 
-                    <Link to={`/application/${job._id}`}>Apply Now</Link>
-                  }
-                </p>
-          </div>
-       </div>
+     <div className="container mx-auto p-4 md:p-8">
+  <div className="bg-white rounded-lg shadow-md p-6">
+    <h3 className="text-2xl font-bold mb-4">Job Details</h3>
+    <p className="text-lg mb-2">
+      Title: <span className="font-semibold">{job.title}</span>
+    </p>
+    <p className="text-lg mb-2">
+      Category: <span className="font-semibold">{job.category}</span>
+    </p>
+    <p className="text-lg mb-2">
+      City: <span className="font-semibold">{job.city}</span>
+    </p>
+    <p className="text-lg mb-2">
+      Location: <span className="font-semibold">{job.location}</span>
+    </p>
+    <p className="text-lg mb-2">
+      Description: <span className="font-semibold">{job.description}</span>
+    </p>
+    <p className="text-lg mb-2">
+      Job Posted On: <span className="font-semibold">{job.jobPostedOn}</span>
+    </p>
+    <p className="text-lg mb-4">
+      Salary:{" "}
+      {job.fixedSalary ? (
+        <span className="font-semibold">{job.fixedSalary}</span>
+      ) : (
+        <span className="font-semibold">
+          {job.salaryFrom} - {job.salaryTo}
+        </span>
+      )}
+    </p>
+    <p>
+      {user && user.role === "Employer" ? null : (
+        <Link
+          to={`/application/${job._id}`}
+          className="inline-flex items-center justify-center py-2 px-4 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition duration-200"
+        >
+          Apply Now
+        </Link>
+      )}
+    </p>
+  </div>
+</div>
+
     </>
   )
 }

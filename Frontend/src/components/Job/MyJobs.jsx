@@ -88,271 +88,227 @@ const MyJobs = () => {
   };
 
   return (
-    <>
-      <div className="myJobs myJobs_page">
-        <div className="myJobs_container">
-          <h1>Your Posted Jobs</h1>
-          { myJobs.length > 0 ? (
-            <>
-              <div className="myJobs_banner">
-                {myJobs.map((element) => (
-                  <div className="myJobs_card" key={element._id}>
-                    <div className="myJobs_content">
-                      <div className="short_fields">
-                        <div>
-                          <span>Title:</span>
-                          <input
-                            type="text"
-                            disabled={
-                              editingMode !== element._id ? true : false
-                            }
-                            value={element.title}
-                            onChange={(e) =>
-                              handleInputChange(
-                                element._id,
-                                "title",
-                                e.target.value
-                              )
-                            }
-                          />
-                        </div>
-                        <div>
-                          {" "}
-                          <span>Country:</span>
-                          <input
-                            type="text"
-                            disabled={
-                              editingMode !== element._id ? true : false
-                            }
-                            value={element.country}
-                            onChange={(e) =>
-                              handleInputChange(
-                                element._id,
-                                "country",
-                                e.target.value
-                              )
-                            }
-                          />
-                        </div>
-                        <div>
-                          <span>City:</span>
-                          <input
-                            type="text"
-                            disabled={
-                              editingMode !== element._id ? true : false
-                            }
-                            value={element.city}
-                            onChange={(e) =>
-                              handleInputChange(
-                                element._id,
-                                "city",
-                                e.target.value
-                              )
-                            }
-                          />
-                        </div>
-                        <div>
-                          <span>Category:</span>
-                          <select
-                            value={element.category}
-                            onChange={(e) =>
-                              handleInputChange(
-                                element._id,
-                                "category",
-                                e.target.value
-                              )
-                            }
-                            disabled={
-                              editingMode !== element._id ? true : false
-                            }
-                          >
-                            <option value="Graphics & Design">
-                              Graphics & Design
-                            </option>
-                            <option value="Mobile App Development">
-                              Mobile App Development
-                            </option>
-                            <option value="Frontend Web Development">
-                              Frontend Web Development
-                            </option>
-                            <option value="MERN Stack Development">
-                              MERN STACK Development
-                            </option>
-                            <option value="Account & Finance">
-                              Account & Finance
-                            </option>
-                            <option value="Artificial Intelligence">
-                              Artificial Intelligence
-                            </option>
-                            <option value="Video Animation">
-                              Video Animation
-                            </option>
-                            <option value="MEAN Stack Development">
-                              MEAN STACK Development
-                            </option>
-                            <option value="MEVN Stack Development">
-                              MEVN STACK Development
-                            </option>
-                            <option value="Data Entry Operator">
-                              Data Entry Operator
-                            </option>
-                          </select>
-                        </div>
-                        <div>
-                          <span>
-                            Salary:{" "}
-                            {element.fixedSalary ? (
-                              <input
-                                type="number"
-                                disabled={
-                                  editingMode !== element._id ? true : false
-                                }
-                                value={element.fixedSalary}
-                                onChange={(e) =>
-                                  handleInputChange(
-                                    element._id,
-                                    "fixedSalary",
-                                    e.target.value
-                                  )
-                                }
-                              />
-                            ) : (
-                              <div>
-                                <input
-                                  type="number"
-                                  disabled={
-                                    editingMode !== element._id ? true : false
-                                  }
-                                  value={element.salaryFrom}
-                                  onChange={(e) =>
-                                    handleInputChange(
-                                      element._id,
-                                      "salaryFrom",
-                                      e.target.value
-                                    )
-                                  }
-                                />
-                                <input
-                                  type="number"
-                                  disabled={
-                                    editingMode !== element._id ? true : false
-                                  }
-                                  value={element.salaryTo}
-                                  onChange={(e) =>
-                                    handleInputChange(
-                                      element._id,
-                                      "salaryTo",
-                                      e.target.value
-                                    )
-                                  }
-                                />
-                              </div>
-                            )}
-                          </span>
-                        </div>
-                        <div>
-                          {" "}
-                          <span>Expired:</span>
-                          <select
-                            value={element.expired}
-                            onChange={(e) =>
-                              handleInputChange(
-                                element._id,
-                                "expired",
-                                e.target.value
-                              )
-                            }
-                            disabled={
-                              editingMode !== element._id ? true : false
-                            }
-                          >
-                            <option value={true}>TRUE</option>
-                            <option value={false}>FALSE</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div className="long_field">
-                        <div>
-                          <span>Description:</span>{" "}
-                          <textarea
-                            rows={5}
-                            value={element.description}
-                            disabled={
-                              editingMode !== element._id ? true : false
-                            }
-                            onChange={(e) =>
-                              handleInputChange(
-                                element._id,
-                                "description",
-                                e.target.value
-                              )
-                            }
-                          />
-                        </div>
-                        <div>
-                          <span>Location: </span>
-                          <textarea
-                            value={element.location}
-                            rows={5}
-                            disabled={
-                              editingMode !== element._id ? true : false
-                            }
-                            onChange={(e) =>
-                              handleInputChange(
-                                element._id,
-                                "location",
-                                e.target.value
-                              )
-                            }
-                          />
-                        </div>
-                      </div>
+    <><div className="container mx-auto p-4">
+    <div className="text-center mb-6">
+      <h1 className="text-3xl font-bold">Your Posted Jobs</h1>
+    </div>
+    {myJobs.length > 0 ? (
+      <div className="space-y-4">
+        {myJobs.map((element) => (
+          <div
+            className="bg-white rounded-lg shadow-md p-4"
+            key={element._id}
+          >
+            <div className="myJobs_content">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <span className="block font-semibold">Title:</span>
+                  <input
+                    type="text"
+                    className="border rounded p-2 w-full"
+                    disabled={editingMode !== element._id}
+                    value={element.title}
+                    onChange={(e) =>
+                      handleInputChange(element._id, "title", e.target.value)
+                    }
+                  />
+                </div>
+                <div>
+                  <span className="block font-semibold">Country:</span>
+                  <input
+                    type="text"
+                    className="border rounded p-2 w-full"
+                    disabled={editingMode !== element._id}
+                    value={element.country}
+                    onChange={(e) =>
+                      handleInputChange(element._id, "country", e.target.value)
+                    }
+                  />
+                </div>
+                <div>
+                  <span className="block font-semibold">City:</span>
+                  <input
+                    type="text"
+                    className="border rounded p-2 w-full"
+                    disabled={editingMode !== element._id}
+                    value={element.city}
+                    onChange={(e) =>
+                      handleInputChange(element._id, "city", e.target.value)
+                    }
+                  />
+                </div>
+                <div>
+                  <span className="block font-semibold">Category:</span>
+                  <select
+                    className="border rounded p-2 w-full"
+                    value={element.category}
+                    onChange={(e) =>
+                      handleInputChange(element._id, "category", e.target.value)
+                    }
+                    disabled={editingMode !== element._id}
+                  >
+                    <option value="Graphics & Design">Graphics & Design</option>
+                    <option value="Mobile App Development">
+                      Mobile App Development
+                    </option>
+                    <option value="Frontend Web Development">
+                      Frontend Web Development
+                    </option>
+                    <option value="MERN Stack Development">
+                      MERN STACK Development
+                    </option>
+                    <option value="Account & Finance">Account & Finance</option>
+                    <option value="Artificial Intelligence">
+                      Artificial Intelligence
+                    </option>
+                    <option value="Video Animation">Video Animation</option>
+                    <option value="MEAN Stack Development">
+                      MEAN STACK Development
+                    </option>
+                    <option value="MEVN Stack Development">
+                      MEVN STACK Development
+                    </option>
+                    <option value="Data Entry Operator">Data Entry Operator</option>
+                  </select>
+                </div>
+                <div>
+                  <span className="block font-semibold">Salary:</span>
+                  {element.fixedSalary ? (
+                    <input
+                      type="number"
+                      className="border rounded p-2 w-full"
+                      disabled={editingMode !== element._id}
+                      value={element.fixedSalary}
+                      onChange={(e) =>
+                        handleInputChange(
+                          element._id,
+                          "fixedSalary",
+                          e.target.value
+                        )
+                      }
+                    />
+                  ) : (
+                    <div className="flex space-x-2">
+                      <input
+                        type="number"
+                        className="border rounded p-2 w-1/2"
+                        disabled={editingMode !== element._id}
+                        value={element.salaryFrom}
+                        onChange={(e) =>
+                          handleInputChange(
+                            element._id,
+                            "salaryFrom",
+                            e.target.value
+                          )
+                        }
+                      />
+                      <input
+                        type="number"
+                        className="border rounded p-2 w-1/2"
+                        disabled={editingMode !== element._id}
+                        value={element.salaryTo}
+                        onChange={(e) =>
+                          handleInputChange(
+                            element._id,
+                            "salaryTo",
+                            e.target.value
+                          )
+                        }
+                      />
                     </div>
-                    {/* Out Of Content Class */}
-                    <div className="button_wrapper">
-                      <div className="edit_btn_wrapper">
-                        {editingMode === element._id ? (
-                          <>
-                            <button
-                              onClick={() => handleUpdateJob(element._id)}
-                              className="check_btn"
-                            >
-                              <FaCheck />
-                            </button>
-                            <button
-                              onClick={() => handleDisableEdit()}
-                              className="cross_btn"
-                            >
-                              <RxCross2 />
-                            </button>
-                          </>
-                        ) : (
-                          <button
-                            onClick={() => handleEnableEdit(element._id)}
-                            className="edit_btn"
-                          >
-                            Edit
-                          </button>
-                        )}
-                      </div>
-                      <button
-                        onClick={() => handleDeleteJob(element._id)}
-                        className="delete_btn"
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  </div>
-                ))}
+                  )}
+                </div>
+                <div>
+                  <span className="block font-semibold">Expired:</span>
+                  <select
+                    className="border rounded p-2 w-full"
+                    value={element.expired}
+                    onChange={(e) =>
+                      handleInputChange(element._id, "expired", e.target.value)
+                    }
+                    disabled={editingMode !== element._id}
+                  >
+                    <option value={true}>TRUE</option>
+                    <option value={false}>FALSE</option>
+                  </select>
+                </div>
               </div>
-            </>
-          ) : (
-            <p>
-              You've not posted any job or may be you deleted all of your jobs!
-            </p>
-          )}
-        </div>
+              <div className="mt-4">
+                <span className="block font-semibold">Description:</span>
+                <textarea
+                  rows={5}
+                  className="border rounded p-2 w-full"
+                  value={element.description}
+                  disabled={editingMode !== element._id}
+                  onChange={(e) =>
+                    handleInputChange(
+                      element._id,
+                      "description",
+                      e.target.value
+                    )
+                  }
+                />
+              </div>
+              <div className="mt-4">
+                <span className="block font-semibold">Location:</span>
+                <textarea
+                  rows={5}
+                  className="border rounded p-2 w-full"
+                  value={element.location}
+                  disabled={editingMode !== element._id}
+                  onChange={(e) =>
+                    handleInputChange(
+                      element._id,
+                      "location",
+                      e.target.value
+                    )
+                  }
+                />
+              </div>
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div className="flex space-x-2">
+                {editingMode === element._id ? (
+                  <>
+                    <button
+                      onClick={() => handleUpdateJob(element._id)}
+                      className="bg-green-500 text-white px-4 py-2 rounded"
+                    >
+                      <FaCheck />
+                    </button>
+                    <button
+                      onClick={() => handleDisableEdit()}
+                      className="bg-red-500 text-white px-4 py-2 rounded"
+                    >
+                      <RxCross2 />
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    onClick={() => handleEnableEdit(element._id)}
+                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                  >
+                    Edit
+                  </button>
+                )}
+              </div>
+              <button
+                onClick={() => handleDeleteJob(element._id)}
+                className="bg-red-600 text-white px-4 py-2 rounded"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
+    ) : (
+      <p className="text-center mt-4">
+        You've not posted any job or maybe you deleted all of your jobs!
+      </p>
+    )}
+  </div>
+  
     </>
   );
 };
