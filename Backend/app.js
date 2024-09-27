@@ -52,6 +52,3 @@ app.use(errorMiddleware);
 export default app;
 
 
-
-
-// import {dbConnection} from './database/dbConnetion.js'
