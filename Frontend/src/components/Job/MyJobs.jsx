@@ -5,7 +5,7 @@ import { FaCheck } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 import { Context } from "../../main";
 import { useNavigate } from "react-router-dom";
-import './style.css'
+
 
 const MyJobs = () => {
   const [myJobs, setMyJobs] = useState([]);

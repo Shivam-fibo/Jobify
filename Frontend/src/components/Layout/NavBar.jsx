@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { GiHamburgerMenu } from "react-icons/gi";
-import './style.css'
+
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -28,6 +28,7 @@ const Navbar = () => {
   };
 
   return (
+    
   <nav id="navbar" className={isAuthorized ? "navbarShow" : "navbarHide"}>
   <div id="nav_container" className="nav_container">
     <div id="logo" className="logo">

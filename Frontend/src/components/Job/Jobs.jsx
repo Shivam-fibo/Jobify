@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { TbNavigationExclamation } from 'react-icons/tb'
 import { Link, useNavigate } from 'react-router-dom'
 import { Context } from '../../main'
-import './style.css'
+
 const Jobs = () => {
   const[jobs, setJobs] = useState([])
   const {isAuthorized} = useContext(Context)
