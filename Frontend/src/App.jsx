@@ -2,7 +2,6 @@ import React from 'react'
 import "./App.css"
 import { Context } from './main'
 import Navbar from './components/Layout/NavBar'
-import Footer from './components/Layout/Footer'
 
 
 import Login from './components/Auth/Login'
@@ -61,7 +60,6 @@ const App = () => {
           <Route path="/job/me" element={<MyJobs />} />
           <Route path="*" element={<NotFound />} /> 
         </Routes>
-        <Footer />
         <Toaster />
       </BrowserRouter>
     

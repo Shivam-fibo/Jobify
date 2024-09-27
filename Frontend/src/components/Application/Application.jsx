@@ -63,56 +63,61 @@ const Application = () => {
   }
 
   return (
-    <section className="application">
-      <div className="container">
-        <h3>Application Form</h3>
-        <form onSubmit={handleApplication}>
+    <section className="application bg-gray-100 p-6 rounded-lg shadow-md">
+    <div className="container">
+      <h3 className="text-xl font-semibold mb-4">Application Form</h3>
+      <form onSubmit={handleApplication} className="space-y-4">
+        <input
+          type="text"
+          placeholder="Your Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="border border-gray-300 p-2 rounded w-full"
+        />
+        <input
+          type="email"
+          placeholder="Your Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="border border-gray-300 p-2 rounded w-full"
+        />
+        <input
+          type="number"
+          placeholder="Your Phone Number"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          className="border border-gray-300 p-2 rounded w-full"
+        />
+        <input
+          type="text"
+          placeholder="Your Address"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          className="border border-gray-300 p-2 rounded w-full"
+        />
+        <textarea
+          placeholder="Cover Letter..."
+          value={coverLetter}
+          onChange={(e) => setCoverLetter(e.target.value)}
+          className="border border-gray-300 p-2 rounded w-full"
+          rows="5"
+        />
+        <div>
+          <label className="block text-lg font-medium mb-1">Select Resume</label>
           <input
-            type="text"
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            type="file"
+            accept=".pdf, .jpg, .png"
+            onChange={handleFileChange}
+            className="border border-gray-300 p-2 rounded w-full"
           />
-          <input
-            type="email"
-            placeholder="Your Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="number"
-            placeholder="Your Phone Number"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Your Address"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-          />
-          <textarea
-            placeholder="CoverLetter..."
-            value={coverLetter}
-            onChange={(e) => setCoverLetter(e.target.value)}
-          />
-          <div>
-            <label
-              style={{ textAlign: "start", display: "block", fontSize: "20px" }}
-            >
-              Select Resume
-            </label>
-            <input
-              type="file"
-              accept=".pdf, .jpg, .png"
-              onChange={handleFileChange}
-              style={{ width: "100%" }}
-            />
-          </div>
-          <button type="submit">Send Application</button>
-        </form>
-      </div>
-    </section>
+        </div>
+        <button type="submit" className="btn bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-200">
+          Send Application
+        </button>
+      </form>
+    </div>
+  </section>
+  
   );
 };
 
